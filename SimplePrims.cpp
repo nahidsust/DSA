@@ -2,11 +2,11 @@
 using namespace std;
 int V=5;
 typedef pair<int, int> iPair;
- priority_queue<iPair, vector<iPair>, greater<iPair>> pq;
-  vector<int>key(V, 1e5);
-    vector<int> parent(V, -1);
-    vector<bool> inMST(V, false);
-                      vector<vector<iPair>> adj(V);
+priority_queue<iPair, vector<iPair>, greater<iPair>> pq;
+vector<int>key(V, 1e5);
+vector<int> parent(V, -1);
+vector<bool> inMST(V, false);
+vector<iPair> adj[100];
 void primMST() {
     pq.push(make_pair(0, 0));
     key[0] = 0;
@@ -34,9 +34,6 @@ void primMST() {
 }
 
 int main() {
-
-
-
     adj[0].push_back({1,2});
     adj[0].push_back(make_pair(3, 6));
     adj[1].push_back(make_pair(0, 2));
